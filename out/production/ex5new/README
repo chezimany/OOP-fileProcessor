@@ -1,0 +1,75 @@
+cheziunix
+
+
+
+=============================
+=      File description     =
+=============================
+
+filters:
+
+Filter - an interface containing a boolean expression.
+AllFilter - a class representing the filter that approves all files.
+BetweenFilter - a class representing the filter that approves only files between 2 bounds.
+ContainsFilter - a class representing the filter that approves only files which names contain a certain string.
+ExecutableFilter - a class representing the filter that approves only files that are executable.
+FileFilter - a class representing the filter that approves only files wich name matches a given string.
+FilterException - an exception for the filters.
+FilterFactory - a factory that creates a new filter.
+FilterNameException - an exception to throw if a bad name is given to a filter.
+FilterParameterException - an exception to throw if a bad parameter is given to a filter.
+GreaterThanFilter - a class representing the filter that approves only files larger than a certain value.
+HiddenFilter - a class representing the filter that approves only files that are hidden.
+MissingBoundException - an exception to throw if the filter is missing a bound.
+NameFilter - an abstract class for filters that are based on the given files names.
+NegativeBoundException - an exception to throw if a negative bound is given to a filter.
+NegFilter - a class that contains a filter and returns the opposite of the filters boolean method.
+PrefixFilter - a class representing the filter that approves only files which name is equal to a given string.
+SizeFilter - an abstract class for filters that are based on size.
+SmallerThanFilter - a class representing the filter that approves only files which size is smaller than a given int.
+SuffixFilter - a class representing the filter that approves only files which name ends with a given string.
+WritableFilter - a class representing the filter that approves only files that are writable.
+YesNoException - an exception to throw if a yesNo filter is given an other value than YES or NO.
+YesNoFilter - an abstract class for filters that are based on a files capability.
+
+orders:
+
+Order - an interface based on the comparator idea.
+AbsOrder - a comparator based on absolute name.
+SizeOrder - a comparator based on size.
+TypeOrder - a comparator based on type.
+Sort - a class that is used to sort file arrays by a given order.
+Reverse - a class that contains an order and return its opposite.
+OrderFactory - a factory to create an order.
+OrderParameterException - an exception to throw if a bad parameter is given to an order
+
+Parser - a class that parses the command file into sections
+Section - a class representing the sections of a command file
+DirectoryProcessor - the main program
+Type1Error - a class representing exceptions that don't require closing the program.
+Type2Error - a class representing exceptions that cause the programs to close.
+
+=============================
+=          Design           =
+=============================
+i decided to create a class for each filter and a comparator for each order and to use factory
+in order to create orders and filters. I based my sorting algorithm on merge sort. I had all the
+filters exceptions inherit from the same exception and similarly for the order exceptions
+the warnings were thrown back from the filters and the factories with the factory and the
+errors from the parser and the main and everything was handked from the main and the parse in order to
+let the program flow well.
+
+
+=============================
+=  Implementation details   =
+=============================
+
+=============================
+=    Answers to questions   =
+=============================
+q - How did you sort your matched files?
+a -Merge Sort.
+q - Did you use a data structure for this purpose?
+a - yes, Array list, because it changes its size automatically and has built in functions,
+and arrays because thy are easy to apply the merge sort algorithm on
+
